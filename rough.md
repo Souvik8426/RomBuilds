@@ -5,8 +5,10 @@
 
 You have two options here, the lazy way or the non-lazy way.
 
-Automatic way (recommended!):
--- Grab a repo with some useful scripts, and run the needed one
+Automatic way (recommended):
+
+Grab a repo with some useful scripts, and run the needed one
+
 $ sudo apt-get install git-core
 $ git clone https://github.com/akhilnarang/scripts
 $ cd scripts
@@ -20,19 +22,8 @@ android_build_env.sh - Ubuntu 14, Ubuntu 16, Ubuntu 18, Mint 19
 #  Step Two: Configure Repo and Git  #
 
 NOTE: If you have any problems with the below commands, try running as root:
+
 $ sudo -s
-
-Git is an open source version control system which is incredibly robust for
-tracking changes across repositories. Repo is Google's tool for working with Git
-in the context of Android. More reading if you are interested:
-https://source.android.com/source/developing.html
-
-Run these commands to get repo all working (only needed if you did the manual
-method of setup above):
-$ curl https://storage.googleapis.com/git-repo-downloads/repo > repo
-$ chmod a+x repo
-$ sudo install repo /usr/local/bin
-$ rm repo
 
 Then run these commands to get git all working:
 $ git config --global user.name "Your Name"
