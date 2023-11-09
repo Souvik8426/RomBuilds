@@ -9,15 +9,15 @@ Automatic way (recommended):
 
 Grab a repo with some useful scripts, and run the needed one
 
-$ sudo apt-get install git-core
+      $ sudo apt-get install git-core
 
-$ git clone https://github.com/akhilnarang/scripts
+      $ git clone https://github.com/akhilnarang/scripts
 
-$ cd scripts
+      $ cd scripts
 
-$ ls
+      $ ls
 
-$ bash setup/<script-name>
+      $ bash setup/<script-name>
 
 Run the script corresponding to your Linux Distribution:
 arch-manjaro.sh - Arch based distros
@@ -27,21 +27,21 @@ android_build_env.sh - Ubuntu 14, Ubuntu 16, Ubuntu 18, Mint 19
 
 NOTE: If you have any problems with the below commands, try running as root:
 
-$ sudo -s
+      $ sudo -s
 
 Then run these commands to get git all working:
 
-$ git config --global user.name "Your Name"
+      $ git config --global user.name "Your Name"
 
-$ git config --global user.email "you@example.com"
+      $ git config --global user.email "you@example.com"
 
 #  Step Three: Download the source  #
 
 First, create a folder for your source:
 
-$ mkdir ~/<foldername> (eg. mkdir ~/DU or ~/PN-Layers)
+      $ mkdir ~/<foldername> (eg. mkdir ~/DU or ~/PN-Layers)
 
-$ cd ~/<foldername>
+      $ cd ~/<foldername>
 
 When you go to build a ROM, you must download its source. All, if not most,
 ROMs will have their source code available on Github. To properly download the
@@ -83,36 +83,36 @@ build times DRASTICALLY.
 
 Open your bashrc or equivalent:
 
-$ nano ~/.bashrc
+      $ nano ~/.bashrc
 
 - Append export USE_CCACHE=1 to the end of this file
    then hit ctrl-X, Y, and enter.
   
-$ source ~/.bashrc
+      $ source ~/.bashrc
 
 After that, run this command if you used the manual method of setup above
 
-$ prebuilts/misc/linux-x86/ccache/ccache -M 50G (or however much you want).
+      $ prebuilts/misc/linux-x86/ccache/ccache -M 50G (or however much you want).
 
 Run this command if you used the automatic method of setup above
 
-$ ccache -M 50G
+      $ ccache -M 50G
 
 Since Android 10, the way of using ccache has changed:
 
-$ export USE_CCACHE=1
+      $ export USE_CCACHE=1
 
-$ export CCACHE_EXEC=$(command -v ccache)
+      $ export CCACHE_EXEC=$(command -v ccache)
 
 After this, load up the compilation commands:
 
-$ . build/envsetup.sh
+      $ . build/envsetup.sh
 
 Then, tell it which device you want to make and let it roll:
 
-$ breakfast <device> OR lunch
+      $ breakfast <device> OR lunch
 
-$ mka bacon
+      $ mka bacon
 
 NOTE: Some ROMs may use their own bacon command, read their manifest as they
 will usually outline this.
@@ -130,7 +130,7 @@ telling you where your flashable zip is located.
 Whenever you build again, make sure you run a clean build every time by placing
 this command in between the other two:
 
-$ make clobber
+      $ make clobber
 
 That's it! You successfully compiled a ROM from scratch :) By doing this, you
 control when you get the new features, which means as soon as they are available
@@ -145,13 +145,13 @@ follow these steps.
 Type this into your terminal, substituting the # with how many GBs of RAM
 you have:
 
-$ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx#g"
+      $ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx#g"
 
 Then go into the root of the source folder and type the following:
 
-$ ./prebuilts/sdk/tools/jack-admin kill-server
+      $ ./prebuilts/sdk/tools/jack-admin kill-server
 
-$ ./prebuilts/sdk/tools/jack-admin start-server
+      $ ./prebuilts/sdk/tools/jack-admin start-server
 
 This will restart the jack server to reflect your new heap limit.
 
