@@ -1,10 +1,7 @@
 
 #   BUILDING ANDROID FROM SOURCE   #
 
-
-#######################################
 #  Step One: set up your environment  #
-#######################################
 
 You have two options here, the lazy way or the non-lazy way.
 
@@ -20,9 +17,7 @@ Run the script corresponding to your Linux Distribution:
 arch-manjaro.sh - Arch based distros
 android_build_env.sh - Ubuntu 14, Ubuntu 16, Ubuntu 18, Mint 19
 
-######################################
 #  Step Two: Configure Repo and Git  #
-######################################
 
 NOTE: If you have any problems with the below commands, try running as root:
 $ sudo -s
@@ -43,10 +38,7 @@ Then run these commands to get git all working:
 $ git config --global user.name "Your Name"
 $ git config --global user.email "you@example.com"
 
-
-#####################################
 #  Step Three: Download the source  #
-#####################################
 
 First, create a folder for your source:
 $ mkdir ~/<foldername> (eg. mkdir ~/DU or ~/PN-Layers)
@@ -69,10 +61,7 @@ source, follow these steps:
    $ repo sync --force-sync -j$( nproc --all )
 -- This process can take a while depending on your internet connection.
 
-
-##########################
 #  Step Four: Build it!  #
-##########################
 
 Here's the moment of truth... time to build the ROM! This process could take
 15 minutes to many hours depending on the speed of your PC but assuming that
@@ -126,10 +115,7 @@ control when you get the new features, which means as soon as they are available
 on Github. After this, you may even want to start contributing, one of the
 greatest things about Android and open source software in general.
 
-
-#################
 #  Jack issues  #
-#################
 
 For those of you who are having jack issues (like saying you ran out of memory),
 follow these steps.
@@ -144,10 +130,7 @@ $ ./prebuilts/sdk/tools/jack-admin start-server
 
 This will restart the jack server to reflect your new heap limit.
 
-
-#############
 #  Support  #
-#############
 
 If you run into any issues while building, you can use the following chat room for assistance
 (be sure to read the rules): https://t.me/AndroidBuildersHelp
@@ -155,10 +138,8 @@ This chat is only for build errors or to get the build to compile.
 
 After you have successfully built the ROM, for any required assistance, use this chat
  https://t.me/AndroidBringup
-
-####################
+ 
 #  Special thanks  #
-####################
 
 @Mazda-- for spearheading the Dirty Unicorns project, his dedication to
 open source, and helping me out at random points during compilation.
