@@ -61,11 +61,11 @@ source, follow these steps:
    repo init -u <url_of_manifest_repo>.git -b <branch_you_want_to_build>.
    For example:
    
-   $ repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b o8x
+      $ repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b o8x
       
 -- After the repo has been initialized, run this command to download the source:
 
-   $ repo sync --force-sync -j$( nproc --all )
+      $ repo sync --force-sync -j$( nproc --all )
    
 -- This process can take a while depending on your internet connection.
 
@@ -75,35 +75,48 @@ Here's the moment of truth... time to build the ROM! This process could take
 15 minutes to many hours depending on the speed of your PC but assuming that
 you have followed the instructions so far, it should be smooth sailing.
 
+
 Before you compile, you may also consider setting up ccache if you can spare
 about 50GB. If not, skip this section. ccache is a compiler cache, which keeps
 previously compiled code stored so it can be easily reused. This speeds up
 build times DRASTICALLY.
 
 Open your bashrc or equivalent:
+
 $ nano ~/.bashrc
+
 - Append export USE_CCACHE=1 to the end of this file
    then hit ctrl-X, Y, and enter.
+  
 $ source ~/.bashrc
 
 After that, run this command if you used the manual method of setup above
+
 $ prebuilts/misc/linux-x86/ccache/ccache -M 50G (or however much you want).
+
 Run this command if you used the automatic method of setup above
+
 $ ccache -M 50G
 
 Since Android 10, the way of using ccache has changed:
+
 $ export USE_CCACHE=1
+
 $ export CCACHE_EXEC=$(command -v ccache)
 
 After this, load up the compilation commands:
+
 $ . build/envsetup.sh
 
 Then, tell it which device you want to make and let it roll:
+
 $ breakfast <device> OR lunch
+
 $ mka bacon
 
 NOTE: Some ROMs may use their own bacon command, read their manifest as they
 will usually outline this.
+
 Others may not use mka, use make -j$( nproc --all )
 
 
@@ -116,6 +129,7 @@ telling you where your flashable zip is located.
 
 Whenever you build again, make sure you run a clean build every time by placing
 this command in between the other two:
+
 $ make clobber
 
 That's it! You successfully compiled a ROM from scratch :) By doing this, you
@@ -130,10 +144,13 @@ follow these steps.
 
 Type this into your terminal, substituting the # with how many GBs of RAM
 you have:
+
 $ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx#g"
 
 Then go into the root of the source folder and type the following:
+
 $ ./prebuilts/sdk/tools/jack-admin kill-server
+
 $ ./prebuilts/sdk/tools/jack-admin start-server
 
 This will restart the jack server to reflect your new heap limit.
