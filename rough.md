@@ -10,9 +10,13 @@ Automatic way (recommended):
 Grab a repo with some useful scripts, and run the needed one
 
 $ sudo apt-get install git-core
+
 $ git clone https://github.com/akhilnarang/scripts
+
 $ cd scripts
+
 $ ls
+
 $ bash setup/<script-name>
 
 Run the script corresponding to your Linux Distribution:
