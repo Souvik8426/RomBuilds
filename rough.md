@@ -30,30 +30,43 @@ NOTE: If you have any problems with the below commands, try running as root:
 $ sudo -s
 
 Then run these commands to get git all working:
+
 $ git config --global user.name "Your Name"
+
 $ git config --global user.email "you@example.com"
 
 #  Step Three: Download the source  #
 
 First, create a folder for your source:
+
 $ mkdir ~/<foldername> (eg. mkdir ~/DU or ~/PN-Layers)
+
 $ cd ~/<foldername>
 
 When you go to build a ROM, you must download its source. All, if not most,
 ROMs will have their source code available on Github. To properly download the
 source, follow these steps:
+
 -- Go to your ROM's Github (e.g. http://github.com/DirtyUnicorns)
+
 -- Search for a manifest (usually called manifest or android_manifest).
+
 -- Go into the repo and make sure you are in the right branch (located right
    under the Commits tab).
+   
 -- Go into the README and search for a repo init command. If one exists, copy
    and paste it into the terminal and hit enter.
+   
 -- If one does not exist, you can make one with this formula:
    repo init -u <url_of_manifest_repo>.git -b <branch_you_want_to_build>.
    For example:
-      $ repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b o8x
+   
+   $ repo init -u https://github.com/DirtyUnicorns/android_manifest.git -b o8x
+      
 -- After the repo has been initialized, run this command to download the source:
+
    $ repo sync --force-sync -j$( nproc --all )
+   
 -- This process can take a while depending on your internet connection.
 
 #  Step Four: Build it!  #
