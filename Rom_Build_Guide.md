@@ -164,14 +164,8 @@ This chat is only for build errors or to get the build to compile.
 After you have successfully built the ROM, for any required assistance, use this chat
  https://t.me/AndroidBringup
  
-#  Special thanks  #
+#  Source  #
 
-@Mazda-- for spearheading the Dirty Unicorns project, his dedication to
-open source, and helping me out at random points during compilation.
+I didnt make this guide by myself but just made some changes go to the link below to get to the original guide.
 
-@BeansTown106 for the various advice and guidance he has provided plus
-his contributions to the open source community through the Pure Nexus Project.
-
-@akhilnarang for his build environment scripts.
-
-@npjohnson for the Ubuntu 16.04 Java 7 instructions.
+https://raw.githubusercontent.com/nathanchance/android-tools/main/guides/building_aosp.txt
