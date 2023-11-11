@@ -6,7 +6,6 @@ Commands used to clone the repos:
 
     git clone -b lineage-20 https://gitlab.com/the-muppets/proprietary_vendor_motorola_sm7325-common vendor/motorola/sm7325-common 
 
-
     git clone -b lineage-20 https://github.com/daedroza/android_device_motorola_dubai.git device/motorola/dubai
 
     git clone -b lineage-20 https://github.com/daedroza/android_device_motorola_sm7325-common.git device/motorola/sm7325-common
