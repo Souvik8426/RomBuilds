@@ -1,4 +1,4 @@
-Suraj sarr plzz check
+Commands used to clone the repos:
 
     git clone https://github.com/daedroza/android_kernel_motorola_sm7325.git kernel/motorola/dubai
 
